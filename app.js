@@ -14,7 +14,6 @@ class Customer {
   document.getElementById('orderForm').addEventListener('submit', function (e) {
     e.preventDefault();
   
-    // Collect form data
     const fullName = document.getElementById('fullName').value;
     const password = document.getElementById('password').value;
     const dob = document.getElementById('dob').value;
@@ -28,7 +27,6 @@ class Customer {
     const orderOption = document.querySelector('input[name="orderOption"]:checked').value;
     const imageUrl = document.getElementById('image').value;
   
-    // Create new customer
     const newCustomer = new Customer(
       fullName,
       password,
@@ -40,17 +38,13 @@ class Customer {
       imageUrl
     );
   
-    // Retrieve existing orders or initialize
     const orders = JSON.parse(localStorage.getItem('orders')) || [];
     orders.push(newCustomer);
   
-    // Save orders back to localStorage
     localStorage.setItem('orders', JSON.stringify(orders));
   
-    // Render the new customer card
     renderCustomer(newCustomer);
   
-    // Reset form
     this.reset();
     alert('Order submitted successfully!');
   });
@@ -73,7 +67,6 @@ class Customer {
     container.appendChild(card);
   }
   
-  // Initial render of existing customers
   function loadExistingCustomers() {
     const orders = JSON.parse(localStorage.getItem('orders')) || [];
     orders.forEach(order => renderCustomer(order));
