@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Ordering System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="formSection">
+      <form id="orderForm">
+        <h2>Place Your Order</h2>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female" required> Female</label>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <fieldset>
+          <legend>Order Type:</legend>
+          <label><input type="checkbox" name="orderType" value="Shawarma"> Shawarma</label>
+          <label><input type="checkbox" name="orderType" value="Zinger"> Zinger</label>
+          <label><input type="checkbox" name="orderType" value="Burger"> Burger</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Order Option:</legend>
+          <label><input type="radio" name="orderOption" value="Combo" required> Combo</label>
+          <label><input type="radio" name="orderOption" value="Sandwich" required> Sandwich</label>
+        </fieldset>
+
+        <label for="image">Image URL:</label>
+        <input type="url" id="image" name="image" placeholder="Enter image URL">
+
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+
+    <section id="customerCards">
+      <h2>Customer Orders</h2>
+      <div id="cardsContainer"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Restaurant Ordering System. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
